@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+/* font-family: "Hind Siliguri", sans-serif; */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,4 +33,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */

@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import CustomLik from "./components/customLinks";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,11 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="font-siliguri bg-[#0d1224]">
         <nav>
           <ul className="flex gap-5 border-b p-5 m-5 justify-center text-2xl">
             <li>
-              <CustomLik path="/">Home</CustomLik>
+              <CustomLik path="/">হোম</CustomLik>
             </li>
             <li>
               <CustomLik path="/about">About</CustomLik>
