@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-siliguri bg-[#0d1224]">
+      <body className="">
         <nav>
           <ul className="flex gap-5 border-b p-5 m-5 justify-center text-2xl">
             <li>
