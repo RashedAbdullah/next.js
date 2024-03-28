@@ -1,7 +1,12 @@
+import { redirect } from "next/navigation";
 import { users } from "../../data";
 
 const GET = async (_request, { params }) => {
   const id = params.id;
+
+  if (parseInt(id) > users.length) {
+    redirect("/api/requests");
+  }
   const user = users.find((usr) => usr.id === parseInt(id));
   return Response.json(user);
 };

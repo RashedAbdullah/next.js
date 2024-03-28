@@ -1,6 +1,15 @@
 import { users } from "../data";
 
-const GET = async () => {
+const GET = async (request) => {
+
+  // Search user by name:
+  const query = request.nextUrl.searchParams.get("query");
+  if (query) {
+    const foundUsers = users.filter((user) =>
+      user.name.toLowerCase().includes(query)
+    );
+    return Response.json(foundUsers);
+  }
   return Response.json(users);
 };
 
