@@ -5,7 +5,7 @@ const Home = async () => {
   // const theme = cookies().get("theme");
   const url = "https://jsonplaceholder.typicode.com/users";
   const data = await getData(url);
-
+// This is comment line for anythings.
   return (
     <div className=" p-5 grid grid-cols-3">
       {data.map((user) => (
