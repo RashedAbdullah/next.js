@@ -7,7 +7,7 @@ const Users = async () => {
   return (
     <div className="w-full p-10 flex gap-5 flex-wrap">
       {users.length ? (
-        users.map((user, inx) => (
+        users.reverse().map((user, inx) => (
           <div key={user._id} className="bg-gray-200 py-5 px-10 rounded-lg">
             <div className="text-center">{inx + 1}</div>
             <h2>Name: {user.name}</h2>

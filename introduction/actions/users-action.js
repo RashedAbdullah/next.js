@@ -7,13 +7,15 @@ import { revalidatePath } from "next/cache";
 const addUser = async (myName, formData) => {
   const name = formData.get("name");
   const address = formData.get("address");
+  // getting hidden input:
+  const mynephew = formData.get("myName");
   const userData = {
     name,
     address,
   };
 
   try {
-    console.dir(myName);
+    console.dir(mynephew);
     await connectMongo();
     await UserModel(userData).save();
     revalidatePath("/server");

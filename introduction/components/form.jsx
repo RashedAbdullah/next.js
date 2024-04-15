@@ -1,4 +1,5 @@
 import { addUser } from "@/actions/users-action";
+import Button from "./button";
 // mongodb+srv://rashedabdullahdemo:<password>@rsd.w20hdvv.mongodb.net/
 const ServerForm = () => {
   // Sending additional data with action:
@@ -8,6 +9,9 @@ const ServerForm = () => {
       action={moreDataWithAction}
       className="bg-gray-400 p-4 max-w-2xl px-20 w-full rounded-lg mb-10"
     >
+      {/* another way to send additional data */}
+      <input type="hidden" name="myName" value="Labib Irfan" />
+
       <div className="grid grid-cols-6 mt-2">
         <p className="col-span-1">Name: </p>
         <input
@@ -27,12 +31,12 @@ const ServerForm = () => {
         />
       </div>
       <div>
-        <button
-          type="submit"
-          className="w-full py-1 px-2 rounded bg-green-500 mt-5 text-white"
+        <Button
+          btnType="submit"
+          classes="w-full py-1 px-2 rounded bg-green-500 mt-5 text-white"
         >
           Submit
-        </button>
+        </Button>
       </div>
     </form>
   );
