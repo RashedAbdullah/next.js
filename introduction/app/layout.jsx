@@ -27,6 +27,9 @@ export default function RootLayout({ children }) {
             <li>
               <CustomLik path="/dynamic">Users</CustomLik>
             </li>
+            <li>
+              <CustomLik path="/server">Form</CustomLik>
+            </li>
           </ul>
         </nav>
         {children}

@@ -1,8 +1,13 @@
 import { addUser } from "@/actions/users-action";
 // mongodb+srv://rashedabdullahdemo:<password>@rsd.w20hdvv.mongodb.net/
 const ServerForm = () => {
+  // Sending additional data with action:
+  const moreDataWithAction = addUser.bind(null, "Rashed Abdullah");
   return (
-    <form action={addUser} className="bg-gray-400 p-4 max-w-2xl px-20 w-full rounded-lg mb-10">
+    <form
+      action={moreDataWithAction}
+      className="bg-gray-400 p-4 max-w-2xl px-20 w-full rounded-lg mb-10"
+    >
       <div className="grid grid-cols-6 mt-2">
         <p className="col-span-1">Name: </p>
         <input
@@ -11,7 +16,6 @@ const ServerForm = () => {
           placeholder="Name"
           className="col-span-5 p-1 rounded"
         />
-        
       </div>
       <div className="grid grid-cols-6 mt-2">
         <p className="col-span-1">Address: </p>

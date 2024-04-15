@@ -4,8 +4,7 @@ import { connectMongo } from "@/DB-Connector/connect-mongo";
 import { UserModel } from "@/models/UserModel";
 import { revalidatePath } from "next/cache";
 
-const addUser = async (formData) => {
-  "use server";
+const addUser = async (myName, formData) => {
   const name = formData.get("name");
   const address = formData.get("address");
   const userData = {
@@ -14,6 +13,7 @@ const addUser = async (formData) => {
   };
 
   try {
+    console.dir(myName);
     await connectMongo();
     await UserModel(userData).save();
     revalidatePath("/server");
@@ -27,7 +27,6 @@ const getUsers = async () => {
     await connectMongo();
     const users = await UserModel.find();
     return users;
-
   } catch (err) {
     console.log(err.message);
   }
