@@ -23,6 +23,7 @@ const ServerForm = () => {
       </div>
       <div className="grid grid-cols-6 mt-2">
         <p className="col-span-1">Address: </p>
+        
         <input
           name="address"
           type="text"
