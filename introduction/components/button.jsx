@@ -3,7 +3,7 @@
 import { useFormStatus } from "react-dom";
 
 const Button = ({ btnType, classes, children }) => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus(); // React latest hook
   return (
     <button
       disabled={pending}
