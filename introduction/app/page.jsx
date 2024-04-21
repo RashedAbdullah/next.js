@@ -12,22 +12,33 @@ const Home = async () => {
       {data.map((user) => (
         <div
           key={user.id}
-          className="m-2 bg-green-400 text-blue-950 p-3 rounded relative shadow-xl"
+          className="m-2 bg-green-400 text-blue-950 p-3 rounded relative shadow-xl grid grid-cols-3 gap-2"
         >
-          <p className="font-thin text-sm">User name: {user.username}</p>
-          <h2>Name: {user.name}</h2>
-          <p className="text-sm">E-mail: {user.email}</p>
-          <p>
-            Address: {user.address.street}, {user.address.city}
-          </p>
+          <div className="col-span-2">
+            {" "}
+            <p className="font-thin text-sm">User name: {user.username}</p>
+            <h2>Name: {user.name}</h2>
+            <p className="text-sm">E-mail: {user.email}</p>
+            <p>
+              Address: {user.address.street}, {user.address.city}
+            </p>
+            <Image
+              src="/hero.svg"
+              alt=""
+              width={5000}
+              height={5000}
+              className="absolute top-0"
+            />
+          </div>
           <Image
-            src="/hero.svg"
+            
+            width={200}
+            height={10}
+            quality={100}
+            src="https://scontent.fcgp3-2.fna.fbcdn.net/v/t39.30808-6/322681218_580128903938051_6457448766777127040_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEONN_9XV1zPXiSPsVjVKDTk11FUx-mM_2TXUVTH6Yz_bCutc-eqPQVQ7VVJNUB37XbdekwlbOgRMXzKtvC0M03&_nc_ohc=7J4M02dIGeUAb5gI7TT&_nc_ht=scontent.fcgp3-2.fna&oh=00_AfCzNjS9E2GKcyHE15V7dNlYSvhKLYV4lGM3MYZl3JS9Zg&oe=662AE541"
             alt=""
-            width={5000}
-            height={5000}
-            className="absolute top-0"
+            className="rounded-lg"
           />
-          <Image width={200} height={300} src="https://scontent.fcgp3-2.fna.fbcdn.net/v/t39.30808-6/322681218_580128903938051_6457448766777127040_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEONN_9XV1zPXiSPsVjVKDTk11FUx-mM_2TXUVTH6Yz_bCutc-eqPQVQ7VVJNUB37XbdekwlbOgRMXzKtvC0M03&_nc_ohc=7J4M02dIGeUAb5gI7TT&_nc_ht=scontent.fcgp3-2.fna&oh=00_AfCzNjS9E2GKcyHE15V7dNlYSvhKLYV4lGM3MYZl3JS9Zg&oe=662AE541" alt="" />
         </div>
       ))}
     </div>
