@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomLik from "./components/customLinks";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,25 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
-        <nav>
-          <ul className="flex gap-5 border-b p-5 m-5 justify-center text-2xl">
-            <li>
-              <CustomLik path="/">হোম</CustomLik>
-            </li>
-            <li>
-              <CustomLik path="/about">About</CustomLik>
-            </li>
-            <li>
-              <CustomLik path="/settings">Settings</CustomLik>
-            </li>
-            <li>
-              <CustomLik path="/dynamic">Users</CustomLik>
-            </li>
-            <li>
-              <CustomLik path="/server">Form</CustomLik>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
         {children}
       </body>
     </html>
