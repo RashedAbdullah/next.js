@@ -1,5 +1,7 @@
 import CustomLik from "@/app/components/customLinks";
 import { auth, signIn, signOut } from "@/auth";
+import Signin from "./signin";
+import Signout from "./signout";
 
 const Navbar = async () => {
   const session = await auth();
@@ -23,6 +25,18 @@ const Navbar = async () => {
         <li>
           <CustomLik path="/server">Form</CustomLik>
         </li>
+        {
+          <li>
+            {session?.user ? (
+              <>
+                <p>{session?.user?.name}</p>
+                <Signout />
+              </>
+            ) : (
+              <Signin />
+            )}
+          </li>
+        }
       </ul>
     </nav>
   );

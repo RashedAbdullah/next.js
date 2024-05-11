@@ -1,6 +1,7 @@
 "use server";
 
 import { connectMongo } from "@/DB-Connector/connect-mongo";
+import { signOut } from "@/auth";
 import { UserModel } from "@/models/UserModel";
 import { revalidatePath } from "next/cache";
 
@@ -34,4 +35,12 @@ const getUsers = async () => {
   }
 };
 
-export { addUser, getUsers };
+const doSignout = async () => {
+  try {
+    await signOut();
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+export { addUser, getUsers, doSignout };
