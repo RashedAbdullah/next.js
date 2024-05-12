@@ -13,6 +13,28 @@ const UserSchema = mongoose.Schema({
   },
 });
 
+const authUserSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
+
+const authUserModel =
+  mongoose.models.User || mongoose.model("User", authUserSchema);
+
 const UserModel = mongoose.models.User || mongoose.model("User", UserSchema);
 
-export { UserModel };
+export { UserModel, authUserModel };

@@ -39,16 +39,29 @@ const doSignout = async () => {
   try {
     await signOut();
   } catch (err) {
-    console.log(err.message);
+    console.log(err);
   }
 };
 
 const doSignin = async () => {
   try {
+    console.log("Sign in components");
     await signIn("google", { callbackUrl: "http://localhost:3000" });
   } catch (err) {
     console.log(err.message);
   }
 };
 
-export { addUser, getUsers, doSignout, doSignin };
+const signinAction = async (formData) => {
+  try {
+    await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirect: false,
+    });
+  } catch (err) {
+    throw err;
+  }
+};
+
+export { addUser, getUsers, doSignout, doSignin, signinAction };

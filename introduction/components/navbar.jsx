@@ -2,6 +2,7 @@ import CustomLik from "@/app/components/customLinks";
 import { auth } from "@/auth";
 import Signin from "./signin";
 import Signout from "./signout";
+import Image from "next/image";
 
 const Navbar = async () => {
   const session = await auth();
@@ -29,10 +30,17 @@ const Navbar = async () => {
         {
           <li>
             {session?.user ? (
-              <>
+              <div className="flex gap-2">
                 <p>{session?.user?.name}</p>
+                <Image
+                className="h-10 w-10 rounded-full"
+                  src={session?.user?.image}
+                  height={300}
+                  width={300}
+                  alt=""
+                />
                 <Signout />
-              </>
+              </div>
             ) : (
               <Signin />
             )}
