@@ -1,5 +1,4 @@
-import React from "react";
-import { users } from "../page";
+
 
 const User = ({ params }) => {
   //   const anyUser = users.find((u) => u.id === params.id);

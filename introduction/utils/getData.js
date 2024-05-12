@@ -1,5 +1,4 @@
 export const getData = async (url) => {
-  // const data = await fetch(url, { cache: "no-store" });
   const data = await fetch(url, {
     next: {
       revalidate: 10,

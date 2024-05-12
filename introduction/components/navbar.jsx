@@ -1,10 +1,11 @@
 import CustomLik from "@/app/components/customLinks";
-import { auth  } from "@/auth";                               
+import { auth } from "@/auth";
 import Signin from "./signin";
 import Signout from "./signout";
 
 const Navbar = async () => {
   const session = await auth();
+
   console.log(session);
 
   return (
