@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "scontent.fcgp3-2.fna.fbcdn.net",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 };
